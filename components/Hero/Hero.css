@@ -1,0 +1,470 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 820px;
+  overflow: hidden;
+  background: #f3f3f0;
+}
+
+/* -------------------- */
+
+.intro-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* -------------------- */
+
+.hero-header {
+  position: absolute;
+  top: 48px;
+  left: 64px;
+  right: 64px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 20;
+}
+
+.hero-logo {
+
+  font-size: 14px;
+
+  letter-spacing: .45em;
+
+  font-weight: 700;
+
+}
+
+.hero-status{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:12px;
+
+letter-spacing:.22em;
+
+text-transform:uppercase;
+
+}
+
+.hero-status .dot{
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:#111;
+
+}
+
+/* -------------------- */
+
+.hero-content{
+    position:absolute;
+    left:14%;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:20;
+}
+
+/* -------------------- */
+
+.hero-title{
+
+display:flex;
+
+flex-direction:column;
+
+line-height:.82;
+
+letter-spacing:-.08em;
+
+font-weight:900;
+
+font-size:clamp(120px,11vw,220px);
+
+}
+
+.hero-title span{
+
+display:block;
+
+}
+
+/* -------------------- */
+
+.hero-meta{
+
+margin-top:52px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.hero-meta span{
+
+font-size:13px;
+
+letter-spacing:.22em;
+
+text-transform:uppercase;
+
+color:#777;
+
+}
+
+/* -------------------- */
+
+.hero-button{
+
+margin-top:58px;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+background:none;
+
+border:none;
+
+cursor:pointer;
+
+font-size:13px;
+
+letter-spacing:.22em;
+
+text-transform:uppercase;
+
+transition:.35s;
+
+}
+
+.hero-button:hover{
+
+transform:translateX(8px);
+
+}
+
+/* -------------------- */
+
+.hero-character{
+
+position:absolute;
+
+right:15%;
+
+bottom:0;
+
+height:92vh;
+
+display:flex;
+
+justify-content:flex-end;
+
+align-items:flex-end;
+
+z-index:10;
+
+}
+
+.hero-character img{
+
+height:100%;
+
+width:auto;
+
+user-select:none;
+
+pointer-events:none;
+
+}
+
+/* -------------------- */
+
+.hero-scroll{
+
+position:absolute;
+
+left:80px;
+
+bottom:48px;
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+font-size:12px;
+
+letter-spacing:.3em;
+
+text-transform:uppercase;
+
+color:#777;
+
+z-index:20;
+
+}
+
+.hero-scroll span{
+
+width:1px;
+
+height:28px;
+
+background:#bbb;
+
+display:block;
+
+}
+
+/* -------------------- */
+
+@media(max-width:1000px){
+
+.hero{
+
+min-height:auto;
+
+height:auto;
+
+padding:40px 24px;
+
+}
+
+.hero-header{
+
+position:relative;
+
+top:auto;
+
+left:auto;
+
+right:auto;
+
+margin-bottom:40px;
+
+}
+
+.hero-content{
+
+position:relative;
+
+left:auto;
+
+top:auto;
+
+transform:none;
+
+}
+
+.hero-title{
+
+font-size:76px;
+
+}
+
+.hero-character{
+
+position:relative;
+
+right:auto;
+
+height:70vh;
+
+margin-top:60px;
+
+justify-content:center;
+
+}
+
+.hero-scroll{
+
+display:none;
+
+}
+
+}
+/* ======================================================
+INTRO PLACEHOLDER
+====================================================== */
+
+.intro{
+
+position:fixed;
+
+inset:0;
+
+background:#f3f3f0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:9999;
+
+transition:opacity .8s ease,
+visibility .8s ease;
+
+}
+
+.intro-hide{
+
+opacity:0;
+
+visibility:hidden;
+
+pointer-events:none;
+
+}
+
+.intro-inner{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:48px;
+
+}
+
+.intro-logo{
+
+font-size:clamp(90px,10vw,170px);
+
+font-weight:900;
+
+letter-spacing:-.08em;
+
+line-height:.8;
+
+}
+
+/* ---------------------------- */
+
+.intro-stage{
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* ---------------------------- */
+
+.wave{
+
+position:absolute;
+
+width:120px;
+
+height:16px;
+
+background:#111;
+
+transform:scaleX(.2);
+
+opacity:0;
+
+transition:
+
+transform .9s cubic-bezier(.2,.8,.2,1),
+
+opacity .5s;
+
+}
+
+/* ---------------------------- */
+
+.wave-active{
+
+transform:scaleX(12);
+
+opacity:1;
+
+animation:
+
+waveDisappear
+
+1.2s
+
+1s
+
+forwards;
+
+}
+
+/* ---------------------------- */
+
+.intro-word{
+
+position:relative;
+
+font-size:clamp(90px,11vw,180px);
+
+font-weight:900;
+
+letter-spacing:-.08em;
+
+opacity:0;
+
+transform:scale(.9);
+
+transition:
+
+opacity .5s,
+
+transform .7s cubic-bezier(.2,.8,.2,1);
+
+}
+
+/* ---------------------------- */
+
+.word-active{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+/* ---------------------------- */
+
+@keyframes waveDisappear{
+
+100%{
+
+opacity:0;
+
+transform:scaleX(16);
+
+}
+
+}
