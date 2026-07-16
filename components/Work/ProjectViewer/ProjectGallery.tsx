@@ -15,7 +15,7 @@ export default function ProjectGallery({
     <div className="project-gallery">
       <div className="project-gallery__hero">
         <Image
-          src={project.heroImage}
+        src={project.keyVisual}
           alt={project.title}
           fill
           priority
