@@ -49,9 +49,9 @@ export const projects: Record<string, Project> = {
 
     title: "A Sweet Return",
 
-    client: "Hershey's",
+    brand: "Hershey's",
 
-    year: "2025",
+    year: "2024",
 
     role: "Art Director",
 
