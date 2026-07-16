@@ -1,18 +1,24 @@
+export type WorkCategory =
+  | "Packaging"
+  | "Brand Identity"
+  | "Events & Activations"
+  | "Campaigns"
+  | "Corporate Collateral";
+
 export interface WorkItem {
   id: number;
-  category:
-    | "Packaging"
-    | "Brand Identity"
-    | "Events & Activations"
-    | "Campaigns"
-    | "Corporate Collateral";
+  category: WorkCategory;
   image: string;
+
+  // Links this gallery item to projects.ts
+  projectId?: string;
 }
 
 const campaigns: WorkItem[] = Array.from({ length: 14 }, (_, index) => ({
   id: index + 1,
   category: "Campaigns",
   image: `/images/work/campaign/${String(index + 1).padStart(2, "0")}.webp`,
+  projectId: `campaign-${String(index + 1).padStart(2, "0")}`,
 }));
 
 const events: WorkItem[] = Array.from({ length: 12 }, (_, index) => ({
@@ -44,6 +50,7 @@ const identity: WorkItem[] = Array.from({ length: 6 }, (_, index) => ({
   category: "Brand Identity",
   image: `/images/work/identity/${String(index + 1).padStart(2, "0")}.webp`,
 }));
+
 export const work: WorkItem[] = [
   ...campaigns,
   ...events,
