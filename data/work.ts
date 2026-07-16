@@ -4,7 +4,8 @@ export interface WorkItem {
     | "Packaging"
     | "Brand Identity"
     | "Events & Activations"
-    | "Campaigns";
+    | "Campaigns"
+    | "Corporate Collateral";
   image: string;
 }
 
