@@ -144,7 +144,11 @@ export default function Work() {
                     ) : (
                       <Image
                         src={item.image}
-                        alt={projects[item.projectId ?? ""]?.title ?? "Project image"}
+                        alt={
+                          item.projectId
+                            ? projects[item.projectId]?.title ?? item.category
+                            : item.category
+                        }
                         fill
                         sizes="33vw"
                       />
@@ -157,7 +161,9 @@ export default function Work() {
                         </span>
 
                         <h3 className="work-card__title">
-                          {item.title}
+                          {item.projectId
+                            ? projects[item.projectId]?.title
+                            : item.category}
                         </h3>
 
                         <span className="work-card__cta">
