@@ -3,7 +3,7 @@ export type WorkCategory =
   | "Brand Identity"
   | "Events & Activations"
   | "Campaigns"
-  | "Corporate Collateral";
+  | "Collateral";
 
 export interface WorkItem {
   id: number;
@@ -35,7 +35,7 @@ const packaging: WorkItem[] = Array.from({ length: 20 }, (_, index) => ({
 
 const collateral: WorkItem[] = Array.from({ length: 5 }, (_, index) => ({
   id: campaigns.length + events.length + packaging.length + index + 1,
-  category: "Corporate Collateral",
+  category: "Collateral",
   image: `/images/work/collateral/${String(index + 1).padStart(2, "0")}.webp`,
 }));
 
