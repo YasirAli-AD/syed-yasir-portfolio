@@ -26,7 +26,7 @@ const tabs = [
   },
   {
     name: "Collateral",
-    count: work.filter((item) => item.category === "Corporate Collateral").length,
+    count: work.filter((item) => item.category === "Collateral").length,
   },
   {
     name: "Brand Identity",

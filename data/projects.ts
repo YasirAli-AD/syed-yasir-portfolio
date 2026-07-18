@@ -3,7 +3,7 @@ export type ProjectCategory =
   | "Packaging"
   | "Brand Identity"
   | "Events & Activations"
-  | "Corporate Collateral";
+  | "Collateral";
 
 export interface ProjectLink {
   label: string;
